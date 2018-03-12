@@ -3,6 +3,7 @@ Test Game
 (c) speedyplane2247 2017-2018
 This game is meant as a test for a FPS I’m going to help someone with, and an anti-cheat engine for it.
 */
+var gunSpeed = [0.5, 10, 0.9 ]; // Sniper, Machine, Pistol RPSecond
 var pos = [ 0,0 ];
 var ai1 = [ 10,10 ]
 var ai2 = [ 20,20 ]
@@ -14,10 +15,7 @@ var GameVersion = "1.0.1";
 function askForName() {
 var person = prompt("Please enter your player name", "Guest"+Math.floor(Math.random() * Math.floor(99999)));
 alert("Hello, "+ person +" !");
-var GameVersion = "1.0.1";
 joinServer(person);
-var pos = [ 0,0 ];
-var gunSpeed = [60, 1000, 500];
 }
 function joinServer(username) {
 var server = prompt("Connect to server: \n LOCALHOST \n No others available.", "LOCALHOST");
@@ -73,14 +71,7 @@ tellServerMoved("askedForPosition",GameVersion,"empty","empty")
 console.log("Your position is: "+pos[0]+", "+pos[1]+".")
 }
 function shoot(gun,time) {
-var ai1 = [ 10,10 ]
-var ai2 = [ 20,20 ]
-var ai3 = [ 21, 55]
-var ai4 = [ -2, 5 ]
-var ai5 = [ -10, -10 ]
-var ai6 = [ -20, -20 ]
 if (gunSpeed == null) {
-var gunSpeed = [0.5, 10, 0.9 ]; // Sniper, Machine, Pistol RPSecond
 }
 tellServerMoved("shot",gun,time,GameVersion)
 if (gun == "Sniper") {
@@ -108,12 +99,6 @@ document.write('<h1> Game Loading </h1> <br> <p> Please enter the JavaScript con
 startClient()
 askForName()
 function checkifShotHit(gunX2) {
-var ai1 = [ 10,10 ]
-var ai2 = [ 20,20 ]
-var ai3 = [ 21, 55]
-var ai4 = [ -2, 5 ]
-var ai5 = [ -10, -10 ]
-var ai6 = [ -20, -20 ]
 
 if (pos[0] == ai1[0] && pos[1] == ai1[1]) {
 console.log("You killed an enemy!")
@@ -141,12 +126,6 @@ tellServerMoved("kill","ai6",gunX2)
 }
 }
 function checkRadar() {
-var ai1 = [ 10,10 ]
-var ai2 = [ 20,20 ]
-var ai3 = [ 21, 55]
-var ai4 = [ -2, 5 ]
-var ai5 = [ -10, -10 ]
-var ai6 = [ -20, -20 ]
 
 var playerRadar = Math.floor(Math.random() * Math.floor(6))
 if (playerRadar == 1) {
@@ -169,3 +148,4 @@ console.log("AI6’s position: "+ai6[0]+" ,"+ai6[1]+".")
 }
 }
 // 1.0.1 - fixes the game, so it actually works now!
+// patch1 - makes code more consistant)
