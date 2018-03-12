@@ -9,7 +9,7 @@ alert("Hello, "+ person +" !");
 var GameVersion = "1.0-patch2";
 joinServer(person);
 var pos = [ 0,0 ];
-var gunSpeed = [60, 1000, 500];
+//var gunSpeed = [60, 1000, 500]; // not correct
 }
 function joinServer(username) {
 var server = prompt("Connect to server: \n LOCALHOST \n No others available.", "LOCALHOST");
@@ -96,3 +96,4 @@ startClient()
 askForName()
 // patch1 - fixes bugs with firing
 // patch2 - adds a message to show JS Console.
+// patch3 - fixes a bug with RPM showing rather than RPS.
