@@ -6,7 +6,7 @@ This game is meant as a test for a FPS I’m going to help someone with, and an 
 function askForName() {
 var person = prompt("Please enter your player name", "Guest"+Math.floor(Math.random() * Math.floor(99999)));
 alert("Hello, "+ person +" !");
-var GameVersion = "1.0-patch1";
+var GameVersion = "1.0-patch2";
 joinServer(person);
 var pos = [ 0,0 ];
 var gunSpeed = [60, 1000, 500];
@@ -91,5 +91,8 @@ function startClient() {
 var client = "started"
 var xhr = new XMLHttpRequest();
 }
+document.write('<h1> Game Loading </h1> <br> <p> Please enter the JavaScript console to play. </p>')
 startClient()
 askForName()
+// patch1 - fixes bugs with firing
+// patch2 - adds a message to show JS Console.
