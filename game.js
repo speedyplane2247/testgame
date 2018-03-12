@@ -6,7 +6,7 @@ This game is meant as a test for a FPS I’m going to help someone with, and an 
 function askForName() {
 var person = prompt("Please enter your player name", "Guest"+Math.floor(Math.random() * Math.floor(99999)));
 alert("Hello, "+ person +" !");
-var GameVersion = "1.0";
+var GameVersion = "1.0-patch1";
 joinServer(person);
 var pos = [ 0,0 ];
 var gunSpeed = [60, 1000, 500];
@@ -67,20 +67,23 @@ tellServerMoved("askedForPosition",GameVersion,"empty","empty")
 console.log("Your position is: "+pos[0]+", "+pos[1]+".")
 }
 function shoot(gun,time) {
+if (gunSpeed == null) {
+var gunSpeed = [0.5, 10, 0.9 ]; // Sniper, Machine, Pistol RPSecond
+}
 tellServerMoved("shot",gun,time,GameVersion)
 if (gun == "Sniper") {
-var timeShoot = time / gunSpeed[0]
-console.log(timeshoot + "rounds were shot.")
+var timeShoot = time * gunSpeed[0]
+console.log(timeShoot + " rounds were shot.")
 tellServerMoved("shot",gun,timeShoot,GameVersion)
 }
 if (gun == "Machine") {
-var timeShoot = time / gunSpeed[1]
-console.log(timeshoot + "rounds were shot.")
+var timeShoot = time * gunSpeed[1]
+console.log(timeShoot + " rounds were shot.")
 tellServerMoved("shot",gun,timeShoot,GameVersion)
 }
 if (gun == "Pistol") {
 var timeShoot = time / gunSpeed[2]
-console.log(timeshoot + "rounds were shot.")
+console.log(timeShoot + " rounds were shot.")
 tellServerMoved("shot",gun,timeShoot,GameVersion)
 }
 }
